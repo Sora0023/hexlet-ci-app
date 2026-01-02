@@ -1,0 +1,23 @@
+name: start-test
+
+on: push
+
+jobs:
+  
+  start_test:
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+
+      - name: started make setup
+        run: make setup
+
+      - name: started lint
+        run: make lint
+
+      - name: started make test
+        run: make test
